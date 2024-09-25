@@ -1,6 +1,6 @@
 package com.exercicios.spring_boot.controllers;
 
-import com.exercicios.spring_boot.models.Cliente;
+import com.exercicios.spring_boot.model.entities.Cliente;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

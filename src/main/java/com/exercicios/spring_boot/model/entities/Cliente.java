@@ -1,4 +1,4 @@
-package com.exercicios.spring_boot.models;
+package com.exercicios.spring_boot.model.entities;
 
 public class Cliente {
 
