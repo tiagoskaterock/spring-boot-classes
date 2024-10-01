@@ -1,9 +1,8 @@
 package com.exercicios.spring_boot.model.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.exercicios.spring_boot.model.entities.repositories.ProdutoRepository;
+import jakarta.persistence.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
@@ -12,6 +11,10 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Autowired
+    @Transient
+    public ProdutoRepository repository;
 
     public Produto() {
     }
