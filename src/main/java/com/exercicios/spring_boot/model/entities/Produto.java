@@ -2,7 +2,10 @@ package com.exercicios.spring_boot.model.entities;
 
 import com.exercicios.spring_boot.model.entities.repositories.ProdutoRepository;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import org.springframework.boot.autoconfigure.web.WebProperties;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Produto {
@@ -11,7 +14,15 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotBlank
     private String nome;
+
+    @Min(0)
+    private float preco;
+
+    @Min(0)
+    @Max(1)
+    private float desconto;
 
     public float getDesconto() {
         return desconto;
@@ -28,9 +39,6 @@ public class Produto {
     public void setPreco(float preco) {
         this.preco = preco;
     }
-
-    private float desconto;
-    private float preco;
 
     public Produto() {
     }
